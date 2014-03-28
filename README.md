@@ -1,37 +1,35 @@
-grunt-svg-data-urls
+grunt-smartling
 ===================
 
-Convert SVGs to data urls and uses templates to style output file. Grunt Plugin.
-
-Template allows you to convert the results object and output the results to the destination file. 
+Allows you upload and download resource files from smartling via grunt commands
 
 How to use
 
 ```
 
-svgDataUrls: {
-
-  compile: {
+    smartling_download:
+      options:
+        apiKey:"xxx"
+        projectId: "xxx"
         
-    files: {
-      src: [
-        "test/resources/*.svg"
-      ],
-      dest: "tmp/test.coffee"
-    },
+      test:
+        locales: [
+          "en-GB"
+          "es-MX"
+          "de-DE"
+          "fr-CA"
+          "ja-JP"
+        ]
+        resourceId: "locale.resource"
+        dest: "/test"
 
-    template: function(results) {
-      var fileContents = ""
+    smartling_upload:
+      options:
+        apiKey:"xxx"
+        projectId: "xxx"
 
-      results.forEach(function(item) {
-        fileContents += item.name +':' + item.dataUrl + ':' + item.filePath
-      })
-
-      return fileContents
-    }
-
-  }
-
-}
+      test:
+        resourceId: "locale.resource"
+        src: "test/resources/resource.json"
 
 ```

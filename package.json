@@ -1,0 +1,39 @@
+{
+  "name": "grunt-smartling",
+  "version": "0.1.0",
+  "description": "Upload / download resources and culture files from smartling",
+  "keywords": [
+    "gruntplugin",
+    "smartling",
+    "json"
+  ],
+  "author": {
+    "name": "Joseph McElroy",
+    "email": "phoey1@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phoey/grunt-smartling"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "dependencies": {
+    "request": "latest",
+    "async":"0.4.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-coffee":"0.7.0"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.2"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "licenses": {
+    "type": "MIT"
+  }
+}

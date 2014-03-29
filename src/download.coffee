@@ -26,7 +26,7 @@ class SmartlingDownload
 
   getLocaleRequest: (locale, callback) =>
     resourceFileName = "#{@options.resourceId}.#{locale}.json"
-    dest = path.join(__dirname,'../', @options.dest, resourceFileName)
+    dest = path.join(@options.dest, resourceFileName)
 
     @grunt.log.write "downloading #{locale} from smartling \n "
 

@@ -1,6 +1,6 @@
 baseUrl       = "https://api.smartling.com/v1/file/get?"
 
-fs            = require 'fs' 
+fs            = require 'fs'
 request       = require 'request'
 querystring   = require "querystring"
 async         = require 'async'
@@ -11,11 +11,11 @@ class SmartlingDownload
 
   constructor:(@grunt, @options, @callback) ->
     @run()
-    
+
   run: ->
     async.each @options.locales, @getLocaleRequest, (err) ->
       @callback()
- 
+
   generateQueryString: (locale) ->
     querystring.stringify {
       locale:     locale
@@ -35,5 +35,5 @@ class SmartlingDownload
     r.on 'close', (err) =>
       callback(err)
 
-  
+
 module.exports = (grunt, options, callback) -> new SmartlingDownload(grunt, options, callback)

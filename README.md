@@ -71,7 +71,7 @@ How to use
 ```
 
 
-NOTE: For JSON uploads to smartling, the following config may be required within the JSON file:
+NOTE: For JSON uploads to smartling, it may be helpful to include the following config within the src JSON file:
 
       {
         "smartling": {

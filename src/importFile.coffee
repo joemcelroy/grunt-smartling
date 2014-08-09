@@ -13,7 +13,7 @@ class SmartlingImport extends BaseUploader
     locale           : @options.locale
     overwrite        : @options.overwrite or false
     translationState : @options.translationState or "IN_EDITING"
-    fileType         : "json"
+    fileType         : @options.fileType or "json"
   }
 
 

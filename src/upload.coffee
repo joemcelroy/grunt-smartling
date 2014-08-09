@@ -9,7 +9,7 @@ class SmartlingUpload extends BaseUploader
     projectId:  @options.projectId
     fileUri:    @options.resourceId
     approved:   true
-    fileType:   "json"
+    fileType:   @options.fileType or "json"
   }
 
 

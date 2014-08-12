@@ -37,7 +37,7 @@ module.exports = (grunt) ->
         ]
         resourceId: "/files/Global.resx"
         # Optionally use filename for destination different from resourceId.
-        destResourceId: "Global"
+        downloadName: "Global"
         dest: "./test"
         # Optionally specify fileType other than json
         fileType: "resx"

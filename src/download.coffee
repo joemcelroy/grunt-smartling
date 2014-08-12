@@ -11,7 +11,7 @@ class SmartlingDownload
 
   constructor:(@grunt, @options, @callback) ->
     @fileType = @options.fileType or "json"
-    @destResourceId = @options.destResourceId or @options.resourceId
+    @downloadName = @options.downloadName or @options.resourceId
     @run()
 
   run: ->
@@ -27,7 +27,7 @@ class SmartlingDownload
     }
 
   getLocaleRequest: (locale, callback) =>
-    resourceFileName = "#{@destResourceId}.#{locale}.#{@fileType}"
+    resourceFileName = "#{@downloadName}.#{locale}.#{@fileType}"
     dest = path.join(@options.dest, resourceFileName)
 
     @grunt.log.write "downloading #{locale} from smartling \n "

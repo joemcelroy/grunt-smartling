@@ -13,7 +13,7 @@ class SmartlingDownload
     @run()
 
   run: ->
-    async.each @options.locales, @getLocaleRequest, (err) ->
+    async.each @options.locales, @getLocaleRequest, (err) =>
       @callback()
 
   generateQueryString: (locale) ->
@@ -31,10 +31,8 @@ class SmartlingDownload
 
     @grunt.log.write "downloading #{locale} from smartling \n "
 
-    r = request.get({url:(baseUrl + @generateQueryString(locale)), json:true})
+    r = request.get({url:(baseUrl + @generateQueryString(locale)), json:true}, callback)
     r.pipe(fs.createWriteStream(dest))
-    r.on 'close', (err) =>
-      callback(err)
 
 
 module.exports = (grunt, options, callback) -> new SmartlingDownload(grunt, options, callback)

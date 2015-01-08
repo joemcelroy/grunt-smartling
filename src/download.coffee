@@ -22,6 +22,7 @@ class SmartlingDownload
       apiKey:     @options.apiKey
       projectId:  @options.projectId
       fileUri:    @options.resourceId
+      retrievalType: @options.retrievalType or "published"
     }
 
   getLocaleRequest: (locale, callback) =>

@@ -16,7 +16,7 @@ module.exports = (grunt) ->
 
     smartling_download:
       options:
-        apiKey:"xxx"
+        apiKey: "xxx"
         projectId: "xxx"
 
       test:
@@ -28,7 +28,19 @@ module.exports = (grunt) ->
           "ja-JP"
         ]
         resourceId: "MobileManager.resource"
-        dest: "/test"
+        dest: "./test"
+
+      resxTest:
+        locales: [
+          "en-GB"
+          "es-MX"
+        ]
+        resourceId: "/files/Global.resx"
+        # Optionally use filename for destination different from resourceId.
+        downloadName: "Global"
+        dest: "./test"
+        # Optionally specify fileType other than json
+        fileType: "resx"
 
     smartling_upload:
       options:
